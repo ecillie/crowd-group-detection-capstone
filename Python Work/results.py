@@ -1,64 +1,94 @@
 """
 @Author : Evan Cillie
-@LastEdit : 05-12-26
-@Purpose : Read tracking_results.txt and create:
+@LastEdit : 05-17-26
+@Purpose : Read one or more YOLO + DeepSORT tracking results files and create:
            1. a LaTeX table of detected persistent groups
-           2. a labeled arrow map showing where groups moved
+           2. a labeled arrow map showing group movement
+
+Run:
+python3 results.py people_in_park_results.txt people-walking.txt wold_results.txt
 """
 
 import os
 import re
+import sys
 import math
-import ast
 from collections import Counter
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# -----------------------------
-# Files / constants
-# -----------------------------
-
-INPUT_FILE = "tracking_results.txt"
 OUTPUT_FOLDER = "processed_results"
 
 FRAME_WIDTH = 640
 FRAME_HEIGHT = 360
+
 FPS = 30
 PROCESS_EVERY_N_FRAMES = 2
 
-# Spatial grouping settings
-GROUP_DISTANCE_EPS = 85
+GROUP_DISTANCE_EPS = 70
 MIN_GROUP_SIZE = 2
 
-# Persistent group matching settings
-GROUP_MATCH_THRESHOLD = 0.40
-MAX_FRAME_GAP = 6
-LOCATION_MATCH_DISTANCE = 90
+GROUP_MATCH_THRESHOLD = 0.35
+MAX_FRAME_GAP = 10
+LOCATION_MATCH_DISTANCE = 100
 
-# Depth cleanup
 MAX_REASONABLE_DEPTH = 30
 
-# Motion classification thresholds
-STATIONARY_SPEED_THRESHOLD = 1.0
-SLOW_MOVING_SPEED_THRESHOLD = 3.0
+STATIONARY_SPEED_THRESHOLD = 1.5
+SLOW_MOVING_SPEED_THRESHOLD = 5.0
 
-
-# -----------------------------
-# Helper functions
-# -----------------------------
 
 def create_output_folder():
+    """
+    Creates the output folder if it does not already exist.
+
+    @return: None
+    """
     if not os.path.exists(OUTPUT_FOLDER):
         os.makedirs(OUTPUT_FOLDER)
 
 
+def get_file_base_name(file_path):
+    """
+    Gets the file name without its folder path or file extension.
+
+    Example:
+    people_in_park_results.txt -> people_in_park_results
+
+    @param file_path: The path to the input tracking results file.
+    @return: The base file name without the extension.
+    """
+    file_name = os.path.basename(file_path)
+    file_base_name = os.path.splitext(file_name)[0]
+    return file_base_name
+
+
 def calculate_distance(x1, y1, x2, y2):
+    """
+    Calculates the Euclidean distance between two screen points.
+
+    @param x1: The x-coordinate of the first point.
+    @param y1: The y-coordinate of the first point.
+    @param x2: The x-coordinate of the second point.
+    @param y2: The y-coordinate of the second point.
+    @return: The distance between the two points.
+    """
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 
 def get_screen_region(x, y):
+    """
+    Converts a screen coordinate into a readable screen region.
+
+    Example regions:
+    top-left, middle-center, bottom-right
+
+    @param x: The x-coordinate of the group center.
+    @param y: The y-coordinate of the group center.
+    @return: A string describing the screen region.
+    """
     if x < FRAME_WIDTH / 3:
         horizontal = "left"
     elif x < 2 * FRAME_WIDTH / 3:
@@ -77,6 +107,12 @@ def get_screen_region(x, y):
 
 
 def classify_motion(avg_speed):
+    """
+    Classifies a group based on its average pixel speed.
+
+    @param avg_speed: The average speed of the group in pixels per frame.
+    @return: The motion label for the group.
+    """
     if avg_speed < STATIONARY_SPEED_THRESHOLD:
         return "STATIONARY"
     elif avg_speed < SLOW_MOVING_SPEED_THRESHOLD:
@@ -86,14 +122,45 @@ def classify_motion(avg_speed):
 
 
 def clean_latex_text(text):
+    """
+    Cleans text so it is safer to use in a LaTeX table.
+
+    @param text: The text value that will be written to LaTeX.
+    @return: A cleaned version of the text.
+    """
     return str(text).replace("_", "\\_")
 
 
-# -----------------------------
-# Step 1: Parse tracking_results.txt
-# -----------------------------
+def calculate_group_overlap(ids1, ids2):
+    """
+    Calculates how much two groups overlap based on their tracked IDs.
+
+    The overlap is calculated using the smaller group size as the denominator.
+    This helps compare groups even if one group gains or loses members.
+
+    @param ids1: A set of track IDs from the first group.
+    @param ids2: A set of track IDs from the second group.
+    @return: A value between 0 and 1 representing group overlap.
+    """
+    if len(ids1) == 0 or len(ids2) == 0:
+        return 0
+
+    intersection = len(ids1.intersection(ids2))
+    smaller_group_size = min(len(ids1), len(ids2))
+
+    return intersection / smaller_group_size
+
 
 def parse_tracking_file(file_path):
+    """
+    Reads a YOLO + DeepSORT tracking results file and converts it into a DataFrame.
+
+    Expected person line format:
+    ID 1 | Center: (x, y) | Speed: 2.1 px/frame | Depth: 5.0 | Ground Y: 320
+
+    @param file_path: The path to the input tracking results file.
+    @return: A pandas DataFrame where each row represents one tracked person in one frame.
+    """
     people_rows = []
 
     current_frame = None
@@ -158,79 +225,66 @@ def parse_tracking_file(file_path):
     return pd.DataFrame(people_rows)
 
 
-# -----------------------------
-# Step 2: Spatial grouping
-# -----------------------------
-
-def distance_between_people(person1, person2):
-    """
-    Uses center_x and ground_y.
-
-    center_x = left/right screen position.
-    ground_y = approximate standing position on screen.
-    """
-    return calculate_distance(
-        person1["center_x"],
-        person1["ground_y"],
-        person2["center_x"],
-        person2["ground_y"]
-    )
-
-
 def cluster_single_frame(frame_data):
     """
-    Custom grouping algorithm without sklearn.
+    Groups people within one frame based on distance.
 
-    People are grouped if they are close to any member of the group.
-    Speed is not used here. This is only spatial grouping.
+    If person A is close to person B, and person B is close to person C,
+    then all three people are placed into the same group.
+
+    People who are not close enough to anyone else are labeled as -1.
+
+    @param frame_data: A DataFrame containing all tracked people in one frame.
+    @return: A list of group labels for the people in that frame.
     """
-    people = frame_data.to_dict("records")
-    used = set()
-    groups = []
+    points = frame_data[["center_x", "ground_y"]].values.tolist()
 
-    for i in range(len(people)):
+    labels = [-1] * len(points)
+    used = set()
+    next_group_id = 0
+
+    for i in range(len(points)):
         if i in used:
             continue
 
         current_group = [i]
         used.add(i)
 
-        changed = True
+        group_index = 0
 
-        while changed:
-            changed = False
+        while group_index < len(current_group):
+            member_index = current_group[group_index]
+            x1, y1 = points[member_index]
 
-            for j in range(len(people)):
+            for j in range(len(points)):
                 if j in used:
                     continue
 
-                for member_index in current_group:
-                    distance = distance_between_people(
-                        people[member_index],
-                        people[j]
-                    )
+                x2, y2 = points[j]
+                distance = calculate_distance(x1, y1, x2, y2)
 
-                    if distance <= GROUP_DISTANCE_EPS:
-                        current_group.append(j)
-                        used.add(j)
-                        changed = True
-                        break
+                if distance <= GROUP_DISTANCE_EPS:
+                    current_group.append(j)
+                    used.add(j)
 
-        groups.append(current_group)
+            group_index += 1
 
-    labels = [-1] * len(people)
-    group_id = 0
+        if len(current_group) >= MIN_GROUP_SIZE:
+            for member_index in current_group:
+                labels[member_index] = next_group_id
 
-    for group in groups:
-        if len(group) >= MIN_GROUP_SIZE:
-            for person_index in group:
-                labels[person_index] = group_id
-            group_id += 1
+            next_group_id += 1
 
     return labels
 
 
 def cluster_groups_by_frame(people_df):
+    """
+    Applies group clustering to every frame in the tracking data.
+
+    @param people_df: A DataFrame containing all tracked people from the input file.
+    @return: A DataFrame with an added spatial_group_id column.
+    """
     grouped_people = []
 
     for frame, frame_data in people_df.groupby("frame"):
@@ -240,8 +294,8 @@ def cluster_groups_by_frame(people_df):
             continue
 
         labels = cluster_single_frame(frame_data)
-        frame_data["spatial_group_id"] = labels
 
+        frame_data["spatial_group_id"] = labels
         grouped_people.append(frame_data)
 
     if len(grouped_people) == 0:
@@ -250,11 +304,15 @@ def cluster_groups_by_frame(people_df):
     return pd.concat(grouped_people, ignore_index=True)
 
 
-# -----------------------------
-# Step 3: Build group summaries per frame
-# -----------------------------
-
 def build_group_summary(grouped_people_df):
+    """
+    Builds a frame-level group summary.
+
+    Each row in the returned DataFrame represents one detected group in one frame.
+
+    @param grouped_people_df: A DataFrame containing tracked people and their spatial group IDs.
+    @return: A DataFrame summarizing each detected group in each frame.
+    """
     group_rows = []
 
     valid_groups = grouped_people_df[grouped_people_df["spatial_group_id"] != -1]
@@ -303,43 +361,32 @@ def build_group_summary(grouped_people_df):
             "x_spread": round(x_spread, 2),
             "y_spread": round(y_spread, 2),
             "spatial_type": spatial_type,
-            "member_ids": str(member_ids)
+            "member_ids": member_ids
         })
 
     return pd.DataFrame(group_rows)
 
 
-# -----------------------------
-# Step 4: Match groups across frames
-# -----------------------------
-
-def parse_member_ids(member_ids_string):
-    try:
-        return set(ast.literal_eval(member_ids_string))
-    except Exception:
-        return set()
-
-
-def calculate_group_overlap(ids1, ids2):
-    if len(ids1) == 0 or len(ids2) == 0:
-        return 0
-
-    intersection = len(ids1.intersection(ids2))
-    smaller_group_size = min(len(ids1), len(ids2))
-
-    return intersection / smaller_group_size
-
-
 def assign_persistent_group_ids(group_summary_df):
+    """
+    Links frame-level groups across time using track ID overlap and screen location.
+
+    This prevents the same real-world group from becoming a new group every frame.
+
+    @param group_summary_df: A DataFrame containing one row per group per frame.
+    @return: The same DataFrame with an added persistent_group_id column.
+    """
     group_summary_df = group_summary_df.copy()
     group_summary_df["persistent_group_id"] = None
 
     active_groups = {}
     next_persistent_id = 1
 
-    for index, row in group_summary_df.sort_values("frame").iterrows():
+    sorted_df = group_summary_df.sort_values("frame")
+
+    for index, row in sorted_df.iterrows():
         current_frame = row["frame"]
-        current_ids = parse_member_ids(row["member_ids"])
+        current_ids = set(row["member_ids"])
         current_center = (row["center_x"], row["center_y"])
 
         best_match_id = None
@@ -391,11 +438,15 @@ def assign_persistent_group_ids(group_summary_df):
     return group_summary_df
 
 
-# -----------------------------
-# Step 5: Build final persistent group table
-# -----------------------------
-
 def build_group_lifetimes(group_summary_df):
+    """
+    Builds the final persistent group lifetime table.
+
+    Each row represents one persistent group across multiple frames.
+
+    @param group_summary_df: A DataFrame containing frame-level groups with persistent group IDs.
+    @return: A DataFrame where each row summarizes one persistent group.
+    """
     lifetime_rows = []
 
     for persistent_id, data in group_summary_df.groupby("persistent_group_id"):
@@ -415,32 +466,24 @@ def build_group_lifetimes(group_summary_df):
         end_row = data.iloc[-1]
 
         all_member_ids = set()
-        for ids_string in data["member_ids"]:
-            all_member_ids.update(parse_member_ids(ids_string))
+        for member_list in data["member_ids"]:
+            all_member_ids.update(member_list)
 
         lifetime_rows.append({
             "Group ID": f"G{persistent_id}",
             "persistent_group_id": persistent_id,
-
-            # Main table columns
             "Size": round(data["group_size"].mean(), 2),
             "Max Size": data["group_size"].max(),
             "Location": main_region,
             "Duration (s)": round(duration_seconds, 2),
             "Type": main_spatial_type,
             "Motion": main_motion_type,
-
-            # Average location
             "Average X": round(data["center_x"].mean(), 2),
             "Average Y": round(data["center_y"].mean(), 2),
-
-            # REQUIRED for arrows
             "Start X": round(start_row["center_x"], 2),
             "Start Y": round(start_row["center_y"], 2),
             "End X": round(end_row["center_x"], 2),
             "End Y": round(end_row["center_y"], 2),
-
-            # Extra info
             "First Frame": first_frame,
             "Last Frame": last_frame,
             "Frames Seen": data["frame"].nunique(),
@@ -451,11 +494,14 @@ def build_group_lifetimes(group_summary_df):
     return pd.DataFrame(lifetime_rows)
 
 
-# -----------------------------
-# Step 6: Save LaTeX table
-# -----------------------------
+def save_latex_group_table(group_lifetimes_df, file_base_name):
+    """
+    Saves a LaTeX table with the most important persistent group statistics.
 
-def save_latex_group_table(group_lifetimes_df):
+    @param group_lifetimes_df: A DataFrame containing persistent group lifetime summaries.
+    @param file_base_name: The base name of the input file.
+    @return: None
+    """
     latex_table_df = group_lifetimes_df[[
         "Group ID",
         "Size",
@@ -472,25 +518,29 @@ def save_latex_group_table(group_lifetimes_df):
     latex_code = latex_table_df.to_latex(
         index=False,
         escape=False,
-        caption="Detected Persistent Group Statistics",
-        label="tab:group_statistics"
+        caption=f"Detected Persistent Group Statistics for {file_base_name}",
+        label=f"tab:{file_base_name}_group_statistics"
     )
 
-    table_path = f"{OUTPUT_FOLDER}/group_statistics_table.tex"
+    table_path = f"{OUTPUT_FOLDER}/{file_base_name}_group_statistics_table.tex"
 
     with open(table_path, "w") as file:
         file.write(latex_code)
 
-    print(f"Saved LaTeX table: {table_path}")
 
+def save_group_arrow_plot(group_lifetimes_df, file_base_name):
+    """
+    Saves a labeled movement map for persistent groups.
 
-# -----------------------------
-# Step 7: Save arrow plot
-# -----------------------------
+    Black point = group start position.
+    Colored arrow/circle = group end position.
+    Color = motion category.
 
-def save_group_arrow_plot(group_lifetimes_df):
+    @param group_lifetimes_df: A DataFrame containing persistent group lifetime summaries.
+    @param file_base_name: The base name of the input file.
+    @return: None
+    """
     if len(group_lifetimes_df) == 0:
-        print("No groups to plot.")
         return
 
     plt.figure(figsize=(10, 6))
@@ -513,28 +563,27 @@ def save_group_arrow_plot(group_lifetimes_df):
 
         color = motion_colors.get(motion_type, "gray")
 
-        # If start and end are the same, make a tiny arrow so it is still visible.
         dx = end_x - start_x
         dy = end_y - start_y
 
         if abs(dx) < 2 and abs(dy) < 2:
-            dx = 8
-            dy = 0
-            end_x = start_x + dx
-            end_y = start_y + dy
+            end_x = min(start_x + 8, FRAME_WIDTH - 5)
+            end_y = start_y
 
-        # Start point
+        arrow_width = max(3, size * 1.5)
+        end_circle_size = max(120, size * 140)
+        start_circle_size = 45
+
         plt.scatter(
             start_x,
             start_y,
             c="black",
-            s=35,
+            s=start_circle_size,
             marker="o",
             alpha=0.9,
             zorder=3
         )
 
-        # Arrow from start to end
         plt.annotate(
             "",
             xy=(end_x, end_y),
@@ -542,30 +591,45 @@ def save_group_arrow_plot(group_lifetimes_df):
             arrowprops=dict(
                 arrowstyle="->",
                 color=color,
-                lw=max(2, size),
-                mutation_scale=24,
+                lw=arrow_width,
+                mutation_scale=26,
                 alpha=0.85
             ),
             zorder=2
         )
 
-        # End point
         plt.scatter(
             end_x,
             end_y,
-            s=size * 100,
+            s=end_circle_size,
             c=color,
             alpha=0.80,
             edgecolors="black",
             zorder=4
         )
 
-        # Group label
+        start_label_x = min(max(start_x + 5, 5), FRAME_WIDTH - 25)
+        start_label_y = min(max(start_y - 5, 12), FRAME_HEIGHT - 10)
+
+        end_label_x = min(max(end_x + 5, 5), FRAME_WIDTH - 25)
+        end_label_y = min(max(end_y + 5, 12), FRAME_HEIGHT - 10)
+
         plt.text(
-            end_x + 5,
-            end_y + 5,
+            start_label_x,
+            start_label_y,
+            group_id,
+            fontsize=8,
+            color="black",
+            weight="bold",
+            zorder=5
+        )
+
+        plt.text(
+            end_label_x,
+            end_label_y,
             group_id,
             fontsize=9,
+            color=color,
             weight="bold",
             zorder=5
         )
@@ -575,66 +639,76 @@ def save_group_arrow_plot(group_lifetimes_df):
 
     plt.xlabel("Screen X")
     plt.ylabel("Screen Y")
-    plt.title("Persistent Group Movement Map")
+    plt.title(f"Persistent Group Movement Map: {file_base_name}")
 
     plt.grid(True)
 
-    # Legend
-    plt.scatter([], [], c="black", s=35, marker="o", label="Start Point")
-    plt.scatter([], [], c="blue", s=80, label="Stationary")
-    plt.scatter([], [], c="orange", s=80, label="Slow Moving")
-    plt.scatter([], [], c="red", s=80, label="Fast Moving")
+    plt.scatter([], [], c="black", s=45, marker="o", label="Start Point")
+    plt.scatter([], [], c="blue", s=120, label="Stationary")
+    plt.scatter([], [], c="orange", s=120, label="Slow Moving")
+    plt.scatter([], [], c="red", s=120, label="Fast Moving")
 
     plt.legend()
 
-    # Save as persistent_group_map.png so you can keep opening the same file name.
-    plot_path = f"{OUTPUT_FOLDER}/persistent_group_map.png"
+    plot_path = f"{OUTPUT_FOLDER}/{file_base_name}_persistent_group_map.png"
 
     plt.savefig(plot_path, dpi=300, bbox_inches="tight")
     plt.close()
 
-    print(f"Saved arrow map: {plot_path}")
 
+def process_one_file(input_file):
+    """
+    Runs the full analysis pipeline for one tracking results file.
 
-# -----------------------------
-# Main
-# -----------------------------
+    This function parses the file, clusters people into groups, links groups
+    across frames, and saves the LaTeX table and movement plot.
 
-def main():
-    create_output_folder()
+    @param input_file: The path to one tracking results file.
+    @return: None
+    """
+    file_base_name = get_file_base_name(input_file)
 
-    print("Parsing tracking results...")
-    people_df = parse_tracking_file(INPUT_FILE)
+    people_df = parse_tracking_file(input_file)
 
     if len(people_df) == 0:
-        print("No people data found. Check your tracking_results.txt format.")
         return
 
-    print("Creating spatial groups by frame...")
     grouped_people_df = cluster_groups_by_frame(people_df)
 
-    print("Building group summaries...")
+    if len(grouped_people_df) == 0:
+        return
+
     group_summary_df = build_group_summary(grouped_people_df)
 
     if len(group_summary_df) == 0:
-        print("No spatial groups found.")
         return
 
-    print("Assigning persistent group IDs...")
     group_summary_df = assign_persistent_group_ids(group_summary_df)
 
-    print("Building final group table...")
     group_lifetimes_df = build_group_lifetimes(group_summary_df)
 
-    print("Saving outputs...")
-    save_latex_group_table(group_lifetimes_df)
-    save_group_arrow_plot(group_lifetimes_df)
+    save_latex_group_table(group_lifetimes_df, file_base_name)
+    save_group_arrow_plot(group_lifetimes_df, file_base_name)
 
-    print("\nDone.")
-    print("Only saved:")
-    print(f"- {OUTPUT_FOLDER}/group_statistics_table.tex")
-    print(f"- {OUTPUT_FOLDER}/persistent_group_map.png")
+
+def main(input_files):
+    """
+    Runs the group analysis pipeline for multiple input files.
+
+    @param input_files: A list of tracking results file paths.
+    @return: None
+    """
+    create_output_folder()
+
+    for input_file in input_files:
+        if not os.path.exists(input_file):
+            continue
+
+        process_one_file(input_file)
 
 
 if __name__ == "__main__":
-    main()
+    input_files = sys.argv[1:]
+
+    if len(input_files) > 0:
+        main(input_files)

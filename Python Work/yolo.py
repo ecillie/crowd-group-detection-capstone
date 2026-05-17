@@ -1,7 +1,16 @@
 """
 @Author : Evan Cillie
-@LastEdit : 05-06-26
+@LastEdit : 05-17-26
 @Purpose : CSC 488 Capstone YOLO + DeepSORT Formation Detection
+
+This script detects and tracks people in video files using YOLO and DeepSORT.
+It writes frame-by-frame tracking results to text files.
+
+Important:
+This script does not estimate true physical depth. Since the input is a
+single 2D video, the program uses relative bounding-box scale instead.
+A larger relative scale usually means the person appears closer to the camera.
+A smaller relative scale usually means the person appears farther away.
 """
 
 from ultralytics import YOLO
@@ -22,31 +31,33 @@ PASSERBY_SPEED_THRESHOLD = 12
 TRACK_HISTORY_LENGTH = 10
 PROCESS_EVERY_N_FRAMES = 2
 
-model = YOLO("yolov8n.pt")
-tracker = DeepSort(
-    max_age=30,
-    n_init=3,
-    max_cosine_distance=0.4
-)
-cap = cv2.VideoCapture("birds-eye-view.mp4")
-if not cap.isOpened():
-    raise Exception("Could not open video")
-track_history = defaultdict(lambda: deque(maxlen=TRACK_HISTORY_LENGTH))
-
-formation_counts = Counter()
-unique_track_ids = set()
-
-frame_number = 0
-processed_frames = 0
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 360
 
 
 def calculate_distance(p1, p2):
+    """
+    Calculates the Euclidean distance between two points.
+
+    @param p1: The first point as an (x, y) tuple.
+    @param p2: The second point as an (x, y) tuple.
+    @return: The distance between the two points.
+    """
     x1, y1 = p1
     x2, y2 = p2
+
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 
 def calculate_speed(history):
+    """
+    Calculates average movement speed using a person's tracking history.
+
+    Speed is measured in pixels per frame. This is not physical speed.
+
+    @param history: A deque of previous center points for one tracked person.
+    @return: The average pixel movement per stored frame.
+    """
     if len(history) < 2:
         return 0
 
@@ -54,16 +65,42 @@ def calculate_speed(history):
     x2, y2 = history[-1]
 
     distance = calculate_distance((x1, y1), (x2, y2))
+
     return distance / len(history)
 
 
+def calculate_relative_scale(box_height):
+    """
+    Calculates a relative screen-size value for a detected person.
+
+    This replaces the old depth calculation. It does not estimate true depth.
+    It only measures how tall the bounding box is relative to the frame height.
+
+    A larger value usually means the person appears closer to the camera.
+    A smaller value usually means the person appears farther away.
+
+    @param box_height: The height of the person's bounding box.
+    @return: The relative scale of the person in the frame.
+    """
+    if box_height <= 0:
+        return 0
+
+    return box_height / FRAME_HEIGHT
+
+
 def detect_close_pairs(people):
+    """
+    Counts how many pairs of people are close together in screen space.
+
+    @param people: A list of dictionaries containing tracked person data.
+    @return: The number of close pairs detected.
+    """
     close_pairs = 0
 
     for i in range(len(people)):
         for j in range(i + 1, len(people)):
-            p1 = (people[i]["center_x"], people[i]["center_y"])
-            p2 = (people[j]["center_x"], people[j]["center_y"])
+            p1 = (people[i]["center_x"], people[i]["ground_y"])
+            p2 = (people[j]["center_x"], people[j]["ground_y"])
 
             if calculate_distance(p1, p2) < GROUP_DISTANCE_THRESHOLD:
                 close_pairs += 1
@@ -72,11 +109,21 @@ def detect_close_pairs(people):
 
 
 def detect_line(people):
+    """
+    Detects whether the tracked people form a rough horizontal or vertical line.
+
+    @param people: A list of dictionaries containing tracked person data.
+    @return: True if a line is detected, otherwise False.
+    """
     if len(people) < 3:
         return False
 
-    x_values = [person["center_x"] for person in people]
-    y_values = [person["center_y"] for person in people]
+    x_values = []
+    y_values = []
+
+    for person in people:
+        x_values.append(person["center_x"])
+        y_values.append(person["ground_y"])
 
     x_spread = max(x_values) - min(x_values)
     y_spread = max(y_values) - min(y_values)
@@ -87,7 +134,14 @@ def detect_line(people):
     return vertical_line or horizontal_line
 
 
-def detect_passerby(people):
+def detect_passerby(people, track_history):
+    """
+    Detects tracked people who are moving quickly across the frame.
+
+    @param people: A list of dictionaries containing tracked person data.
+    @param track_history: A dictionary mapping track IDs to recent center points.
+    @return: A list of track IDs classified as passersby.
+    """
     passerby_ids = []
 
     for person in people:
@@ -100,20 +154,32 @@ def detect_passerby(people):
     return passerby_ids
 
 
-def classify_formation(people):
+def classify_formation(people, track_history):
+    """
+    Classifies the current frame's human formation.
+
+    Possible labels include:
+    NO PEOPLE, SINGLE PERSON, LINE DETECTED, CROWD DETECTED,
+    GROUP DETECTED, PASSERBY DETECTED, and MULTIPLE PEOPLE.
+
+    @param people: A list of dictionaries containing tracked person data.
+    @param track_history: A dictionary mapping track IDs to recent center points.
+    @return: A formation label for the current frame.
+    """
     active_people = len(people)
 
     if active_people == 0:
         return "NO PEOPLE"
 
     if active_people == 1:
-        if len(detect_passerby(people)) > 0:
+        if len(detect_passerby(people, track_history)) > 0:
             return "PASSERBY DETECTED"
+
         return "SINGLE PERSON"
 
     close_pairs = detect_close_pairs(people)
     is_line = detect_line(people)
-    passerby_ids = detect_passerby(people)
+    passerby_ids = detect_passerby(people, track_history)
 
     if is_line:
         return "LINE DETECTED"
@@ -130,101 +196,212 @@ def classify_formation(people):
     return "MULTIPLE PEOPLE"
 
 
-with open("tracking_results.txt", "w") as output_file:
-    output_file.write("CSC 488 Capstone Tracking Results\n")
-    output_file.write("YOLO + DeepSORT Formation Detection\n")
-    output_file.write("-----------------------------------\n\n")
+def get_detections(results):
+    """
+    Extracts person detections from YOLO results.
 
-    while True:
-        ret, frame = cap.read()
+    DeepSORT expects detections in the format:
+    ([x, y, width, height], confidence, class_name)
 
-        if not ret:
-            break
+    @param results: The YOLO result object for one frame.
+    @return: A list of person detections formatted for DeepSORT.
+    """
+    detections = []
 
-        frame_number += 1
+    for box in results.boxes:
+        class_id = int(box.cls[0])
+        confidence = float(box.conf[0])
 
-        if frame_number % PROCESS_EVERY_N_FRAMES != 0:
+        if class_id == PERSON_CLASS_ID and confidence > CONFIDENCE_THRESHOLD:
+            x1, y1, x2, y2 = map(int, box.xyxy[0])
+
+            width = x2 - x1
+            height = y2 - y1
+
+            detections.append(([x1, y1, width, height], confidence, "person"))
+
+    return detections
+
+
+def get_people_from_tracks(tracks, track_history, unique_track_ids):
+    """
+    Converts confirmed DeepSORT tracks into person data dictionaries.
+
+    Each dictionary contains the person's track ID, center position, speed,
+    relative scale, and ground-level y-coordinate.
+
+    @param tracks: The list of DeepSORT tracks for the current frame.
+    @param track_history: A dictionary mapping track IDs to recent center points.
+    @param unique_track_ids: A set storing every unique track ID seen.
+    @return: A list of tracked person dictionaries.
+    """
+    people = []
+
+    for track in tracks:
+        if not track.is_confirmed():
             continue
 
-        processed_frames += 1
-        print(f"in Frame {frame_number}")
+        track_id = track.track_id
+        unique_track_ids.add(track_id)
 
-        frame = cv2.resize(frame, (640, 360))
+        x1, y1, x2, y2 = map(int, track.to_ltrb())
 
-        results = model(frame, verbose=False)[0]
+        center_x = (x1 + x2) // 2
+        center_y = (y1 + y2) // 2
+        ground_y = y2
 
-        detections = []
+        box_height = y2 - y1
+        relative_scale = calculate_relative_scale(box_height)
 
-        for box in results.boxes:
-            class_id = int(box.cls[0])
-            confidence = float(box.conf[0])
+        track_history[track_id].append((center_x, center_y))
+        speed = calculate_speed(track_history[track_id])
 
-            if class_id == PERSON_CLASS_ID and confidence > CONFIDENCE_THRESHOLD:
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
+        person_data = {
+            "track_id": track_id,
+            "center_x": center_x,
+            "center_y": center_y,
+            "speed": speed,
+            "relative_scale": relative_scale,
+            "ground_y": ground_y
+        }
 
-                width = x2 - x1
-                height = y2 - y1
+        people.append(person_data)
 
-                detections.append(([x1, y1, width, height], confidence, "person"))
+    return people
 
-        tracks = tracker.update_tracks(detections, frame=frame)
 
-        people = []
+def write_frame_results(output_file, frame_number, status, people):
+    """
+    Writes the tracking results for one processed frame.
 
-        for track in tracks:
-            if not track.is_confirmed():
-                continue
+    @param output_file: The open text file being written to.
+    @param frame_number: The current frame number from the video.
+    @param status: The formation classification for the frame.
+    @param people: A list of tracked person dictionaries.
+    @return: None
+    """
+    output_file.write(f"Frame {frame_number}\n")
+    output_file.write(f"Formation: {status}\n")
+    output_file.write(f"People tracked: {len(people)}\n")
 
-            track_id = track.track_id
-            unique_track_ids.add(track_id)
+    for person in people:
+        output_file.write(
+            f"  ID {person['track_id']} | "
+            f"Center: ({person['center_x']}, {person['center_y']}) | "
+            f"Speed: {person['speed']:.2f} px/frame | "
+            f"Relative Scale: {person['relative_scale']:.2f} | "
+            f"Ground Y: {person['ground_y']}\n"
+        )
 
-            x1, y1, x2, y2 = map(int, track.to_ltrb())
+    output_file.write("\n")
 
-            center_x = (x1 + x2) // 2
-            center_y = (y1 + y2) // 2
 
-            track_history[track_id].append((center_x, center_y))
+def write_final_summary(output_file, processed_frames, unique_track_ids, formation_counts):
+    """
+    Writes the final tracking summary at the end of the output file.
 
-            person_data = {
-                "track_id": track_id,
-                "center_x": center_x,
-                "center_y": center_y,
-                "x1": x1,
-                "y1": y1,
-                "x2": x2,
-                "y2": y2,
-                "speed": calculate_speed(track_history[track_id])
-            }
-
-            people.append(person_data)
-
-        status = classify_formation(people)
-        formation_counts[status] += 1
-
-        output_file.write(f"Frame {frame_number}\n")
-        output_file.write(f"Formation: {status}\n")
-        output_file.write(f"People tracked: {len(people)}\n")
-
-        for person in people:
-            output_file.write(
-                f"  ID {person['track_id']} | "
-                f"Center: ({person['center_x']}, {person['center_y']}) | "
-                f"Speed: {person['speed']:.2f} px/frame\n"
-            )
-
-        output_file.write("\n")
-
+    @param output_file: The open text file being written to.
+    @param processed_frames: The number of frames processed by the model.
+    @param unique_track_ids: A set of all unique DeepSORT track IDs.
+    @param formation_counts: A Counter storing formation label frequencies.
+    @return: None
+    """
     output_file.write("\nFinal Summary\n")
     output_file.write("-------------\n")
     output_file.write(f"Frames Tracked: {processed_frames}\n")
     output_file.write(f"Total tracked IDs: {len(unique_track_ids)}\n\n")
 
     output_file.write("Formation counts:\n")
+
     for formation, count in formation_counts.items():
         output_file.write(f"{formation}: {count} frames\n")
 
 
-cap.release()
+def process_video(video_file_name, output_file_name):
+    """
+    Runs YOLO and DeepSORT on one video file and writes tracking results.
 
-print("Tracking complete.")
-print("Results saved to tracking_results.txt")
+    @param video_file_name: The input video file path.
+    @param output_file_name: The output text file path.
+    @return: None
+    """
+    model = YOLO("yolov8n.pt")
+
+    tracker = DeepSort(
+        max_age=30,
+        n_init=3,
+        max_cosine_distance=0.4
+    )
+
+    cap = cv2.VideoCapture(video_file_name)
+
+    if not cap.isOpened():
+        raise Exception("Could not open video")
+
+    track_history = defaultdict(lambda: deque(maxlen=TRACK_HISTORY_LENGTH))
+    formation_counts = Counter()
+    unique_track_ids = set()
+
+    frame_number = 0
+    processed_frames = 0
+
+    with open(output_file_name, "w") as output_file:
+        output_file.write("CSC 488 Capstone Tracking Results\n")
+        output_file.write("YOLO + DeepSORT Formation Detection\n")
+        output_file.write("-----------------------------------\n\n")
+
+        while True:
+            ret, frame = cap.read()
+
+            if not ret:
+                break
+
+            frame_number += 1
+
+            if frame_number % PROCESS_EVERY_N_FRAMES != 0:
+                continue
+
+            processed_frames += 1
+
+            frame = cv2.resize(frame, (FRAME_WIDTH, FRAME_HEIGHT))
+
+            results = model(frame, verbose=False)[0]
+            detections = get_detections(results)
+
+            tracks = tracker.update_tracks(detections, frame=frame)
+            people = get_people_from_tracks(tracks, track_history, unique_track_ids)
+
+            status = classify_formation(people, track_history)
+            formation_counts[status] += 1
+
+            write_frame_results(output_file, frame_number, status, people)
+
+        write_final_summary(
+            output_file,
+            processed_frames,
+            unique_track_ids,
+            formation_counts
+        )
+
+    cap.release()
+
+
+def main(video_output_pairs):
+    """
+    Processes multiple videos.
+
+    @param video_output_pairs: A list of tuples containing video file names and output file names.
+    @return: None
+    """
+    for video_file_name, output_file_name in video_output_pairs:
+        process_video(video_file_name, output_file_name)
+
+
+if __name__ == "__main__":
+    video_output_pairs = [
+        ("people-in-park.mp4", "people_in_park_results.txt"),
+        ("people-walking.mp4", "people-walking.txt"),
+        ("wold.mp4", "wold_results.txt")
+    ]
+
+    main(video_output_pairs)
