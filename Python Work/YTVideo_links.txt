@@ -3,3 +3,9 @@ https://www.youtube.com/watch?v=xjtZYFOcjBs
 https://www.youtube.com/watch?v=cszHn75JR3Q
 
 https://www.youtube.com/watch?v=HOk8siZLZqk
+
+https://www.youtube.com/shorts/y7Hn5ENUmGQ
+
+https://www.youtube.com/watch?v=3FXUw98rrUY
+
+yt-dlp -f "mp4" -o "file_name" "link"
