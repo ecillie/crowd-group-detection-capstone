@@ -24,8 +24,8 @@ CROWD_SIZE_THRESHOLD = 4
 LINE_ALIGNMENT_THRESHOLD = 60
 PASSERBY_SPEED_THRESHOLD = 12
 
+PROCESS_EVERY_FRAMES = 2
 TRACK_HISTORY_LENGTH = 10
-PROCESS_EVERY_N_FRAMES = 2
 
 FRAME_WIDTH = 640
 FRAME_HEIGHT = 360
@@ -443,7 +443,7 @@ def process_video(video_file_name, output_file_name):
 
             frame_number += 1
 
-            if frame_number % PROCESS_EVERY_N_FRAMES != 0:
+            if frame_number % PROCESS_EVERY_FRAMES != 0:
                 continue
 
             processed_frames += 1

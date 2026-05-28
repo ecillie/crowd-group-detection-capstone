@@ -8,4 +8,4 @@ G3 | 1:46 | 2:01 | Top-Stairs
 
 G4 | 3:12 | 4:24 | Center
 
-G3 | 3:39 | 4:04 | Top-Stairs
+G5 | 3:39 | 4:04 | Top-Stairs

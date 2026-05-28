@@ -9,10 +9,6 @@
            - tagged total duration
            - original average duration
            - tagged average duration
-
-This script uses two file lists:
-1. TAGGED_FILES: LaTeX tables made from manually tagged group results
-2. NON_TAGGED_FILES: original/non-tagged LaTeX result tables
 """
 
 import os
@@ -183,22 +179,18 @@ def parse_non_tagged_latex_file(input_path):
         line = line.replace("\\\\", "").strip()
         parts = [clean_cell(item) for item in line.split("&")]
 
-        # Find the duration column from the header row
         for index, item in enumerate(parts):
             if "duration" in item.lower():
                 duration_index = index
 
-        # Only use actual group rows
         if len(parts) == 0 or not is_group_row(parts[0]):
             continue
 
         duration = None
 
-        # Best case: use the column with "Duration" in the header
         if duration_index is not None and duration_index < len(parts):
             duration = get_number_from_text(parts[duration_index])
 
-        # Backup: if no duration header was found, use the last number in the row
         if duration is None:
             numbers = []
 

@@ -12,10 +12,10 @@ G5 | 0:14 | 0:24 | Center
 
 G6 | 0:20 | 0:25 | Center
 
-G6 | 0:20 | 0:25 | Center
+G7 | 0:20 | 0:25 | Center
 
-G6 | 0:27 | 0:35 | Center-Right
+G8 | 0:27 | 0:35 | Center-Right
 
-G6 | 0:27 | 0:41 | Middle
+G9 | 0:27 | 0:41 | Middle
 
-G6 | 0:42 | 0:45 | Middle
+G10 | 0:42 | 0:45 | Middle

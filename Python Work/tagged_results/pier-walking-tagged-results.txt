@@ -22,5 +22,5 @@ G11 | 0:21 | 0:27 | Left-Right
 
 G12 | 0:22 | 0:33 | Left-Right
 
-G13s | 0:29 | 0:38 | Left-Right
+G13s| 0:29 | 0:38 | Left-Right
 

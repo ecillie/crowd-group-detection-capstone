@@ -401,8 +401,7 @@ def save_latex_group_table(group_lifetimes_df, file_base_name):
         "Start Time (s)",
         "End Time (s)",
         "Duration (s)",
-        "Motion",
-        "Members Seen"
+        "Motion"
     ]].copy()
 
     latex_table_df = latex_table_df.sort_values("Group ID")
@@ -410,7 +409,6 @@ def save_latex_group_table(group_lifetimes_df, file_base_name):
     latex_table_df["Type"] = latex_table_df["Type"].apply(clean_latex_text)
     latex_table_df["Location"] = latex_table_df["Location"].apply(clean_latex_text)
     latex_table_df["Motion"] = latex_table_df["Motion"].apply(clean_latex_text)
-    latex_table_df["Members Seen"] = latex_table_df["Members Seen"].apply(clean_latex_text)
 
     latex_code = latex_table_df.to_latex(
         index=False,
@@ -419,7 +417,6 @@ def save_latex_group_table(group_lifetimes_df, file_base_name):
         label=f"tab:{file_base_name}_group_statistics"
     )
 
-    # Wrap only the tabular part in resizebox so the full table fits on the page
     latex_code = latex_code.replace(
         "\\begin{tabular}",
         "\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}"
