@@ -1,0 +1,11 @@
+G_Num | Start | End | Location
+
+G1 | 0:04 | 1:15 | Back Center
+
+G2 | 0:05 | 0:22 | Walking Middle
+
+G3 | 0:33 | 0:45 | Back Right
+
+G4 | 0:04 | 1:15 | Front Center
+
+G5 | 0:04 | 1:15 | Back Right

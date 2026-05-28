@@ -1,0 +1,11 @@
+G_Num | Start | End | Location
+
+G1 | 0:00 | 0:04 | Center-Downward
+
+G2 | 0:01 | 0:05 | Center-Downward
+
+G3 | 0:00 | 0:07 | Still-Middle
+
+G4 | 0:04| 0:10 | Back-Center
+
+G5 | 0:00| 0:13 | Back

@@ -1,0 +1,21 @@
+G_Num | Start | End | Location
+
+G1 | 0:00| 0:05 | Center
+
+G2 | 0:00 | 0:14 | Center
+
+G3 | 0:02 | 0:25 | Center Right
+
+G4 | 0:02 | 0:11 | Front
+
+G5 | 0:14 | 0:24 | Center
+
+G6 | 0:20 | 0:25 | Center
+
+G6 | 0:20 | 0:25 | Center
+
+G6 | 0:27 | 0:35 | Center-Right
+
+G6 | 0:27 | 0:41 | Middle
+
+G6 | 0:42 | 0:45 | Middle

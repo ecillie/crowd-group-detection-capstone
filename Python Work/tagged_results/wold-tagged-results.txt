@@ -1,0 +1,11 @@
+G_Num | Start | End | Location
+
+G1 | 0:33 | 0:54 | Right-Side
+
+G2 | 1:48 | 1:54 | Across-Middle
+
+G3 | 1:46 | 2:01 | Top-Stairs
+
+G4 | 3:12 | 4:24 | Center
+
+G3 | 3:39 | 4:04 | Top-Stairs

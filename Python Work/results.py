@@ -5,7 +5,7 @@
            and create a LaTeX table of persistent group statistics.
 
 Current Run Command :
-python3 results.py people_in_park_results.txt people-walking.txt wold_results.txt pier_walking_results.txt walk_in_park_results.txt
+python3 results.py people-in-park-results.txt people-walking.txt wold-results.txt pier-walking-results.txt walk-in-park-results.txt
 """
 
 import os
@@ -389,12 +389,8 @@ def build_group_lifetimes(group_df):
 def save_latex_group_table(group_lifetimes_df, file_base_name):
     """
     Saves a LaTeX table with the main persistent group statistics.
-
-    @param group_lifetimes_df: A DataFrame containing persistent group summaries.
-    @param file_base_name: The base name of the input file.
-    @return: None
+    The table is resized to fit within the page width.
     """
-
 
     latex_table_df = group_lifetimes_df[[
         "Group ID",
@@ -423,11 +419,21 @@ def save_latex_group_table(group_lifetimes_df, file_base_name):
         label=f"tab:{file_base_name}_group_statistics"
     )
 
-    table_path = f"{OUTPUT_FOLDER}/{file_base_name}_group_statistics_table.tex"
+    # Wrap only the tabular part in resizebox so the full table fits on the page
+    latex_code = latex_code.replace(
+        "\\begin{tabular}",
+        "\\resizebox{\\textwidth}{!}{%\n\\begin{tabular}"
+    )
+
+    latex_code = latex_code.replace(
+        "\\end{tabular}",
+        "\\end{tabular}%\n}"
+    )
+
+    table_path = f"{OUTPUT_FOLDER}/{file_base_name}.tex"
 
     with open(table_path, "w") as file:
         file.write(latex_code)
-
 
 def process_one_file(input_file):
     """

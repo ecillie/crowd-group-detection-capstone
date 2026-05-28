@@ -1,0 +1,1532 @@
+CSC 488 Capstone Tracking Results
+YOLO + DeepSORT Multi-Group Formation Detection
+-----------------------------------------------
+
+Frame 2
+People tracked: 0
+Groups detected: 0
+
+Frame 4
+People tracked: 0
+Groups detected: 0
+
+Frame 6
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (262.00, 355.00) | Avg Speed: 0.00
+
+Frame 8
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (266.00, 355.00) | Avg Speed: 2.00
+
+Frame 10
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (269.00, 354.00) | Avg Speed: 2.36
+
+Frame 12
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (273.00, 354.00) | Avg Speed: 2.76
+
+Frame 14
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 355.00) | Avg Speed: 5.80
+
+Frame 16
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 356.00) | Avg Speed: 3.85
+
+Frame 18
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (240.00, 356.00) | Avg Speed: 3.17
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (56.00, 221.00) | Avg Speed: 0.00
+
+Frame 20
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 356.00) | Avg Speed: 2.53
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (53.00, 224.00) | Avg Speed: 2.50
+
+Frame 22
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (249.00, 356.00) | Avg Speed: 1.46
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (50.00, 227.00) | Avg Speed: 2.83
+
+Frame 24
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (253.00, 356.00) | Avg Speed: 0.91
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (48.00, 231.00) | Avg Speed: 2.50
+
+Frame 26
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (255.00, 356.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (45.00, 242.00) | Avg Speed: 3.41
+
+Frame 28
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (253.00, 356.00) | Avg Speed: 1.65
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (43.00, 246.00) | Avg Speed: 3.31
+
+Frame 30
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (251.00, 356.00) | Avg Speed: 2.24
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (41.00, 250.00) | Avg Speed: 3.35
+
+Frame 32
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 356.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (38.00, 254.00) | Avg Speed: 3.36
+
+Frame 34
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (240.00, 356.00) | Avg Speed: 0.10
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (36.00, 258.00) | Avg Speed: 3.30
+
+Frame 36
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (34.00, 262.00) | Avg Speed: 3.26
+
+Frame 38
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 356.00) | Avg Speed: 0.14
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (31.00, 266.00) | Avg Speed: 3.11
+
+Frame 40
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (247.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (29.00, 270.00) | Avg Speed: 3.04
+
+Frame 42
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (257.00, 356.00) | Avg Speed: 0.50
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (27.00, 274.00) | Avg Speed: 3.19
+
+Frame 44
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (260.00, 356.00) | Avg Speed: 0.51
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (25.00, 278.00) | Avg Speed: 2.83
+
+Frame 46
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (258.00, 356.00) | Avg Speed: 0.50
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (23.00, 282.00) | Avg Speed: 2.83
+
+Frame 48
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (254.00, 356.00) | Avg Speed: 0.32
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (21.00, 286.00) | Avg Speed: 2.76
+
+Frame 50
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (250.00, 356.00) | Avg Speed: 0.61
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (18.00, 290.00) | Avg Speed: 2.76
+
+Frame 52
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (247.00, 356.00) | Avg Speed: 0.70
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (16.00, 295.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (456.00, 171.00) | Avg Speed: 0.00
+
+Frame 54
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (249.00, 356.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (14.00, 299.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (459.00, 171.00) | Avg Speed: 1.50
+
+Frame 56
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (250.00, 356.00) | Avg Speed: 0.90
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (12.00, 303.00) | Avg Speed: 2.76
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (461.00, 172.00) | Avg Speed: 1.67
+
+Frame 58
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (249.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (9.00, 307.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (464.00, 172.00) | Avg Speed: 2.00
+
+Frame 60
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 356.00) | Avg Speed: 1.33
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (7.00, 311.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (466.00, 172.00) | Avg Speed: 2.01
+
+Frame 62
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 356.00) | Avg Speed: 1.90
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (5.00, 315.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (469.00, 172.00) | Avg Speed: 2.17
+
+Frame 64
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 356.00) | Avg Speed: 2.20
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (3.00, 319.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (472.00, 172.00) | Avg Speed: 2.30
+
+Frame 66
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 356.00) | Avg Speed: 1.81
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (1.00, 323.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (488.00, 178.00) | Avg Speed: 4.05
+
+Frame 68
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 355.00) | Avg Speed: 1.30
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-2.00, 327.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (492.00, 179.00) | Avg Speed: 4.04
+
+Frame 70
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 355.00) | Avg Speed: 0.90
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-4.00, 331.00) | Avg Speed: 2.76
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (496.00, 180.00) | Avg Speed: 4.04
+
+Frame 72
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 355.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-6.00, 335.00) | Avg Speed: 2.76
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (500.00, 181.00) | Avg Speed: 4.16
+
+Frame 74
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 355.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-8.00, 339.00) | Avg Speed: 2.76
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (505.00, 182.00) | Avg Speed: 4.46
+
+Frame 76
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 355.00) | Avg Speed: 0.51
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-11.00, 343.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (509.00, 183.00) | Avg Speed: 4.57
+
+Frame 78
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (246.00, 355.00) | Avg Speed: 0.20
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-13.00, 348.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (513.00, 183.00) | Avg Speed: 4.79
+
+Frame 80
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (249.00, 355.00) | Avg Speed: 0.81
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-15.00, 352.00) | Avg Speed: 2.76
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (517.00, 184.00) | Avg Speed: 4.88
+
+Frame 82
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (250.00, 355.00) | Avg Speed: 1.40
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-17.00, 356.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (521.00, 185.00) | Avg Speed: 5.02
+
+Frame 84
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (246.00, 355.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-19.00, 360.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (526.00, 186.00) | Avg Speed: 3.82
+
+Frame 86
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 355.00) | Avg Speed: 0.51
+Group 1 | Type: SINGLE PERSON | Members: ['3'] | Size: 1 | Center: (-22.00, 364.00) | Avg Speed: 2.83
+Group 2 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (529.00, 187.00) | Avg Speed: 3.73
+
+Frame 88
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 355.00) | Avg Speed: 0.45
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (533.00, 188.00) | Avg Speed: 3.72
+
+Frame 90
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 356.00) | Avg Speed: 0.41
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (538.00, 189.00) | Avg Speed: 3.82
+
+Frame 92
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 356.00) | Avg Speed: 0.10
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (542.00, 189.00) | Avg Speed: 3.72
+
+Frame 94
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 356.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (546.00, 190.00) | Avg Speed: 3.71
+
+Frame 96
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 356.00) | Avg Speed: 1.80
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (550.00, 191.00) | Avg Speed: 3.72
+
+Frame 98
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (221.00, 356.00) | Avg Speed: 2.80
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (554.00, 192.00) | Avg Speed: 3.72
+
+Frame 100
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (223.00, 356.00) | Avg Speed: 2.70
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (574.00, 203.00) | Avg Speed: 1.91
+
+Frame 102
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (221.00, 356.00) | Avg Speed: 2.50
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (578.50, 204.00) | Avg Speed: 3.12
+
+Frame 104
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (216.00, 356.00) | Avg Speed: 2.61
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (598.50, 218.00) | Avg Speed: 4.89
+
+Frame 106
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (214.00, 356.00) | Avg Speed: 2.82
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (602.50, 222.00) | Avg Speed: 5.06
+
+Frame 108
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 356.00) | Avg Speed: 2.63
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (607.50, 225.50) | Avg Speed: 5.21
+
+Frame 110
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (226.00, 355.00) | Avg Speed: 1.30
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (612.00, 227.50) | Avg Speed: 5.37
+
+Frame 112
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 355.00) | Avg Speed: 0.86
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (616.00, 230.00) | Avg Speed: 5.46
+
+Frame 114
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 355.00) | Avg Speed: 1.21
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (620.50, 232.00) | Avg Speed: 5.62
+
+Frame 116
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 355.00) | Avg Speed: 1.93
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (624.50, 234.00) | Avg Speed: 5.70
+
+Frame 118
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 355.00) | Avg Speed: 1.30
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (629.00, 236.00) | Avg Speed: 5.78
+
+Frame 120
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 355.00) | Avg Speed: 2.04
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (633.50, 238.50) | Avg Speed: 5.84
+
+Frame 122
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 355.00) | Avg Speed: 2.62
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (637.00, 240.50) | Avg Speed: 4.11
+
+Frame 124
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (240.00, 356.00) | Avg Speed: 2.60
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (642.00, 242.50) | Avg Speed: 4.17
+
+Frame 126
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 356.00) | Avg Speed: 2.60
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (646.50, 245.00) | Avg Speed: 4.11
+
+Frame 128
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (256.00, 356.00) | Avg Speed: 3.00
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (650.00, 247.00) | Avg Speed: 4.00
+
+Frame 130
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (260.00, 356.00) | Avg Speed: 2.30
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (654.50, 249.00) | Avg Speed: 4.06
+
+Frame 132
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (251.00, 356.00) | Avg Speed: 1.20
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (658.50, 251.50) | Avg Speed: 3.99
+
+Frame 134
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 356.00) | Avg Speed: 0.50
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (663.50, 253.00) | Avg Speed: 4.09
+
+Frame 136
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 356.00) | Avg Speed: 0.70
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (667.00, 255.50) | Avg Speed: 4.03
+
+Frame 138
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (245.00, 356.00) | Avg Speed: 0.41
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (671.50, 258.00) | Avg Speed: 3.99
+
+Frame 140
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (246.00, 356.00) | Avg Speed: 0.40
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (676.00, 259.50) | Avg Speed: 4.08
+
+Frame 142
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 356.00) | Avg Speed: 0.40
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (680.00, 262.00) | Avg Speed: 4.01
+
+Frame 144
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 356.00) | Avg Speed: 0.10
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (684.50, 264.00) | Avg Speed: 3.99
+
+Frame 146
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 356.00) | Avg Speed: 1.30
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (689.00, 266.00) | Avg Speed: 4.10
+
+Frame 148
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 356.00) | Avg Speed: 1.70
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (693.00, 268.50) | Avg Speed: 4.04
+
+Frame 150
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 356.00) | Avg Speed: 1.41
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (697.50, 270.50) | Avg Speed: 4.11
+
+Frame 152
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 356.00) | Avg Speed: 1.12
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (701.50, 272.50) | Avg Speed: 4.01
+
+Frame 154
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 356.00) | Avg Speed: 0.71
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (706.00, 274.50) | Avg Speed: 4.08
+
+Frame 156
+People tracked: 3
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 356.00) | Avg Speed: 0.91
+Group 1 | Type: SMALL GROUP | Members: ['5', '6'] | Size: 2 | Center: (710.00, 277.00) | Avg Speed: 4.06
+
+Frame 158
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (222.00, 356.00) | Avg Speed: 2.40
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (763.00, 298.00) | Avg Speed: 5.53
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (563.00, 243.00) | Avg Speed: 8.20
+
+Frame 160
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (231.00, 356.00) | Avg Speed: 1.32
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (769.00, 300.00) | Avg Speed: 5.51
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (564.00, 247.00) | Avg Speed: 8.30
+
+Frame 162
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (775.00, 303.00) | Avg Speed: 5.53
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (566.00, 250.00) | Avg Speed: 8.37
+
+Frame 164
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (245.00, 356.00) | Avg Speed: 0.20
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (781.00, 305.00) | Avg Speed: 5.53
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (568.00, 254.00) | Avg Speed: 8.37
+
+Frame 166
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (253.00, 356.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (786.00, 308.00) | Avg Speed: 5.41
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (572.00, 255.00) | Avg Speed: 8.13
+
+Frame 168
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (257.00, 356.00) | Avg Speed: 2.01
+Group 1 | Type: SINGLE PERSON | Members: ['5'] | Size: 1 | Center: (792.00, 311.00) | Avg Speed: 5.43
+Group 2 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (572.00, 257.00) | Avg Speed: 8.44
+
+Frame 170
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (254.00, 356.00) | Avg Speed: 2.11
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (572.00, 259.00) | Avg Speed: 8.63
+
+Frame 172
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 356.00) | Avg Speed: 0.95
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (572.00, 260.00) | Avg Speed: 8.93
+
+Frame 174
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 356.00) | Avg Speed: 0.54
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 262.00) | Avg Speed: 9.23
+
+Frame 176
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 356.00) | Avg Speed: 1.92
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 263.00) | Avg Speed: 2.44
+
+Frame 178
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 356.00) | Avg Speed: 0.81
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 265.00) | Avg Speed: 2.31
+
+Frame 180
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 356.00) | Avg Speed: 1.08
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 267.00) | Avg Speed: 2.26
+
+Frame 182
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 356.00) | Avg Speed: 1.22
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 268.00) | Avg Speed: 1.63
+
+Frame 184
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 356.00) | Avg Speed: 2.01
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 270.00) | Avg Speed: 1.30
+
+Frame 186
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 356.00) | Avg Speed: 2.91
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 272.00) | Avg Speed: 1.30
+
+Frame 188
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 356.00) | Avg Speed: 2.11
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 273.00) | Avg Speed: 1.30
+
+Frame 190
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 356.00) | Avg Speed: 0.61
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (571.00, 275.00) | Avg Speed: 1.30
+
+Frame 192
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 356.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 276.00) | Avg Speed: 1.20
+
+Frame 194
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (225.00, 356.00) | Avg Speed: 1.60
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 278.00) | Avg Speed: 1.30
+
+Frame 196
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 356.00) | Avg Speed: 0.60
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 280.00) | Avg Speed: 1.40
+
+Frame 198
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 356.00) | Avg Speed: 0.40
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 281.00) | Avg Speed: 1.30
+
+Frame 200
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 356.00) | Avg Speed: 0.40
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 283.00) | Avg Speed: 1.30
+
+Frame 202
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (230.00, 356.00) | Avg Speed: 0.32
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 285.00) | Avg Speed: 1.30
+
+Frame 204
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 356.00) | Avg Speed: 0.91
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 286.00) | Avg Speed: 1.32
+
+Frame 206
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 356.00) | Avg Speed: 0.81
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 288.00) | Avg Speed: 1.32
+
+Frame 208
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 356.00) | Avg Speed: 0.36
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 289.00) | Avg Speed: 1.30
+
+Frame 210
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 356.00) | Avg Speed: 0.36
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (570.00, 291.00) | Avg Speed: 1.40
+
+Frame 212
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (227.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 293.00) | Avg Speed: 1.30
+
+Frame 214
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (224.00, 356.00) | Avg Speed: 0.81
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 294.00) | Avg Speed: 1.20
+
+Frame 216
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (231.00, 356.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 296.00) | Avg Speed: 1.30
+
+Frame 218
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (219.00, 356.00) | Avg Speed: 1.80
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 297.00) | Avg Speed: 1.30
+
+Frame 220
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (220.00, 356.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 299.00) | Avg Speed: 1.30
+
+Frame 222
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (220.00, 356.00) | Avg Speed: 1.70
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (569.00, 301.00) | Avg Speed: 1.30
+
+Frame 224
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (220.00, 356.00) | Avg Speed: 2.10
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (568.00, 302.00) | Avg Speed: 1.20
+
+Frame 226
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (222.00, 356.00) | Avg Speed: 1.30
+Group 1 | Type: SINGLE PERSON | Members: ['6'] | Size: 1 | Center: (568.00, 304.00) | Avg Speed: 1.32
+
+Frame 228
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 356.00) | Avg Speed: 0.36
+
+Frame 230
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 355.00) | Avg Speed: 0.41
+
+Frame 232
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (231.00, 355.00) | Avg Speed: 0.76
+
+Frame 234
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 355.00) | Avg Speed: 0.58
+
+Frame 236
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 355.00) | Avg Speed: 1.60
+
+Frame 238
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 355.00) | Avg Speed: 1.20
+
+Frame 240
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 355.00) | Avg Speed: 1.20
+
+Frame 242
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (221.00, 355.00) | Avg Speed: 0.14
+
+Frame 244
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (222.00, 355.00) | Avg Speed: 0.20
+
+Frame 246
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (224.00, 355.00) | Avg Speed: 0.54
+
+Frame 248
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (219.00, 355.00) | Avg Speed: 0.90
+
+Frame 250
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 355.00) | Avg Speed: 1.41
+
+Frame 252
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (216.00, 355.00) | Avg Speed: 2.00
+
+Frame 254
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 355.00) | Avg Speed: 1.82
+
+Frame 256
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 356.00) | Avg Speed: 1.55
+
+Frame 258
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 356.00) | Avg Speed: 1.50
+
+Frame 260
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (218.00, 355.00) | Avg Speed: 0.30
+
+Frame 262
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (213.00, 355.00) | Avg Speed: 0.91
+
+Frame 264
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (212.00, 355.00) | Avg Speed: 1.20
+
+Frame 266
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (212.00, 355.00) | Avg Speed: 0.70
+
+Frame 268
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (208.00, 354.00) | Avg Speed: 0.91
+
+Frame 270
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (210.00, 354.00) | Avg Speed: 0.61
+
+Frame 272
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (213.00, 355.00) | Avg Speed: 0.50
+
+Frame 274
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (216.00, 355.00) | Avg Speed: 0.32
+
+Frame 276
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (220.00, 355.00) | Avg Speed: 0.30
+
+Frame 278
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (224.00, 355.00) | Avg Speed: 0.61
+
+Frame 280
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 355.00) | Avg Speed: 1.60
+
+Frame 282
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 355.00) | Avg Speed: 2.01
+
+Frame 284
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 355.00) | Avg Speed: 2.01
+
+Frame 286
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 355.00) | Avg Speed: 2.50
+
+Frame 288
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 355.00) | Avg Speed: 1.92
+
+Frame 290
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 355.00) | Avg Speed: 1.58
+
+Frame 292
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (229.00, 355.00) | Avg Speed: 1.39
+
+Frame 294
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (230.00, 355.00) | Avg Speed: 1.08
+
+Frame 296
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (230.00, 355.00) | Avg Speed: 0.67
+
+Frame 298
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 354.00) | Avg Speed: 0.50
+
+Frame 300
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 354.00) | Avg Speed: 0.57
+
+Frame 302
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (223.00, 355.00) | Avg Speed: 1.14
+
+Frame 304
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (223.00, 355.00) | Avg Speed: 1.08
+
+Frame 306
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (227.00, 355.00) | Avg Speed: 0.22
+
+Frame 308
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 355.00) | Avg Speed: 0.41
+
+Frame 310
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 355.00) | Avg Speed: 0.71
+
+Frame 312
+People tracked: 1
+Groups detected: 1
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 355.00) | Avg Speed: 1.17
+
+Frame 314
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 355.00) | Avg Speed: 0.92
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (153.00, 213.00) | Avg Speed: 0.00
+
+Frame 316
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (230.00, 355.00) | Avg Speed: 0.36
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (131.00, 218.00) | Avg Speed: 11.05
+
+Frame 318
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (223.00, 354.00) | Avg Speed: 0.51
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (121.00, 221.00) | Avg Speed: 10.71
+
+Frame 320
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 354.00) | Avg Speed: 0.63
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (111.00, 224.00) | Avg Speed: 10.55
+
+Frame 322
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (216.00, 355.00) | Avg Speed: 0.70
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (107.00, 236.00) | Avg Speed: 9.31
+
+Frame 324
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 355.00) | Avg Speed: 1.02
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (104.00, 231.00) | Avg Speed: 8.18
+
+Frame 326
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (215.00, 355.00) | Avg Speed: 1.71
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (103.00, 244.00) | Avg Speed: 7.21
+
+Frame 328
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (213.00, 355.00) | Avg Speed: 2.33
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (95.00, 249.00) | Avg Speed: 7.32
+
+Frame 330
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (209.00, 355.00) | Avg Speed: 3.28
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (100.00, 223.00) | Avg Speed: 5.97
+
+Frame 332
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (206.00, 355.00) | Avg Speed: 3.34
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (99.00, 220.00) | Avg Speed: 5.49
+
+Frame 334
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (204.00, 355.00) | Avg Speed: 2.63
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (95.00, 227.00) | Avg Speed: 3.60
+
+Frame 336
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (205.00, 355.00) | Avg Speed: 1.82
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (90.00, 228.00) | Avg Speed: 3.10
+
+Frame 338
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (203.00, 354.00) | Avg Speed: 1.43
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (84.00, 230.00) | Avg Speed: 2.70
+
+Frame 340
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (201.00, 354.00) | Avg Speed: 1.51
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (79.00, 232.00) | Avg Speed: 2.80
+
+Frame 342
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (198.00, 354.00) | Avg Speed: 1.90
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (73.00, 234.00) | Avg Speed: 3.13
+
+Frame 344
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (199.00, 354.00) | Avg Speed: 1.60
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (68.00, 235.00) | Avg Speed: 3.50
+
+Frame 346
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (199.00, 354.00) | Avg Speed: 1.40
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (63.00, 237.00) | Avg Speed: 3.20
+
+Frame 348
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (196.00, 354.00) | Avg Speed: 1.30
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (57.00, 239.00) | Avg Speed: 4.66
+
+Frame 350
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (196.00, 354.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (52.00, 241.00) | Avg Speed: 5.11
+
+Frame 352
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 354.00) | Avg Speed: 1.02
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (46.00, 242.00) | Avg Speed: 4.96
+
+Frame 354
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (193.00, 354.00) | Avg Speed: 1.24
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (41.00, 244.00) | Avg Speed: 4.96
+
+Frame 356
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 354.00) | Avg Speed: 0.98
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (36.00, 246.00) | Avg Speed: 4.87
+
+Frame 358
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (196.00, 355.00) | Avg Speed: 0.64
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (30.00, 248.00) | Avg Speed: 4.96
+
+Frame 360
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 355.00) | Avg Speed: 0.50
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (25.00, 249.00) | Avg Speed: 4.85
+
+Frame 362
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 355.00) | Avg Speed: 0.64
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (19.00, 251.00) | Avg Speed: 4.96
+
+Frame 364
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (193.00, 355.00) | Avg Speed: 0.72
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (14.00, 253.00) | Avg Speed: 4.96
+
+Frame 366
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (192.00, 355.00) | Avg Speed: 0.57
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (8.00, 255.00) | Avg Speed: 4.96
+
+Frame 368
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (192.00, 355.00) | Avg Speed: 0.50
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (3.00, 256.00) | Avg Speed: 4.96
+
+Frame 370
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (200.00, 355.00) | Avg Speed: 0.60
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-2.00, 258.00) | Avg Speed: 4.87
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (467.00, 199.00) | Avg Speed: 0.00
+
+Frame 372
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (200.00, 355.00) | Avg Speed: 0.71
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-8.00, 260.00) | Avg Speed: 4.96
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (469.00, 201.00) | Avg Speed: 1.12
+
+Frame 374
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (198.00, 355.00) | Avg Speed: 0.41
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-13.00, 262.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (471.00, 204.00) | Avg Speed: 1.89
+
+Frame 376
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (198.00, 355.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-19.00, 263.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (475.00, 206.00) | Avg Speed: 2.24
+
+Frame 378
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (195.00, 355.00) | Avg Speed: 0.14
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-24.00, 265.00) | Avg Speed: 4.96
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (477.00, 210.00) | Avg Speed: 2.83
+
+Frame 380
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (195.00, 355.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-29.00, 267.00) | Avg Speed: 4.87
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (482.00, 212.00) | Avg Speed: 3.20
+
+Frame 382
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 355.00) | Avg Speed: 0.14
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-35.00, 269.00) | Avg Speed: 4.96
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (487.00, 215.00) | Avg Speed: 3.57
+
+Frame 384
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (195.00, 355.00) | Avg Speed: 0.32
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-41.00, 270.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (494.00, 218.00) | Avg Speed: 3.92
+
+Frame 386
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (194.00, 355.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-46.00, 272.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (497.00, 220.00) | Avg Speed: 3.83
+
+Frame 388
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (197.00, 355.00) | Avg Speed: 0.58
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-51.00, 274.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (511.00, 224.00) | Avg Speed: 4.79
+
+Frame 390
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (204.00, 355.00) | Avg Speed: 0.57
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-57.00, 276.00) | Avg Speed: 4.95
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (516.00, 227.00) | Avg Speed: 5.19
+
+Frame 392
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (208.00, 355.00) | Avg Speed: 1.02
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-62.00, 277.00) | Avg Speed: 4.96
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (520.00, 229.00) | Avg Speed: 5.26
+
+Frame 394
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (209.00, 355.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['10'] | Size: 1 | Center: (-67.00, 279.00) | Avg Speed: 4.87
+Group 2 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (525.00, 232.00) | Avg Speed: 5.42
+
+Frame 396
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (211.00, 355.00) | Avg Speed: 1.61
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (552.00, 238.00) | Avg Speed: 7.58
+
+Frame 398
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (212.00, 356.00) | Avg Speed: 1.73
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (560.00, 241.00) | Avg Speed: 7.83
+
+Frame 400
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (213.00, 356.00) | Avg Speed: 1.90
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (568.00, 246.00) | Avg Speed: 8.17
+
+Frame 402
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (215.00, 356.00) | Avg Speed: 2.00
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (575.00, 251.00) | Avg Speed: 8.22
+
+Frame 404
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (216.00, 356.00) | Avg Speed: 2.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (582.00, 254.00) | Avg Speed: 8.63
+
+Frame 406
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (217.00, 356.00) | Avg Speed: 2.06
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (589.00, 257.00) | Avg Speed: 7.92
+
+Frame 408
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (218.00, 356.00) | Avg Speed: 1.49
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (596.00, 260.00) | Avg Speed: 8.12
+
+Frame 410
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (220.00, 356.00) | Avg Speed: 1.30
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (603.00, 264.00) | Avg Speed: 8.42
+
+Frame 412
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (221.00, 356.00) | Avg Speed: 1.24
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (609.00, 267.00) | Avg Speed: 8.50
+
+Frame 414
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (222.00, 356.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (617.00, 270.00) | Avg Speed: 6.77
+
+Frame 416
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (223.00, 356.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (624.00, 273.00) | Avg Speed: 6.80
+
+Frame 418
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (225.00, 356.00) | Avg Speed: 1.22
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (631.00, 276.00) | Avg Speed: 6.53
+
+Frame 420
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (226.00, 357.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (637.00, 280.00) | Avg Speed: 6.38
+
+Frame 422
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (227.00, 357.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (644.00, 283.00) | Avg Speed: 6.38
+
+Frame 424
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (228.00, 357.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (651.00, 286.00) | Avg Speed: 6.38
+
+Frame 426
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (230.00, 357.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (658.00, 289.00) | Avg Speed: 6.38
+
+Frame 428
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (231.00, 357.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (665.00, 293.00) | Avg Speed: 6.38
+
+Frame 430
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (232.00, 357.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (672.00, 296.00) | Avg Speed: 6.50
+
+Frame 432
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (233.00, 357.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (679.00, 299.00) | Avg Speed: 6.38
+
+Frame 434
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 357.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (686.00, 302.00) | Avg Speed: 6.38
+
+Frame 436
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 357.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (693.00, 305.00) | Avg Speed: 6.38
+
+Frame 438
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 357.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (700.00, 309.00) | Avg Speed: 6.48
+
+Frame 440
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 358.00) | Avg Speed: 1.10
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (707.00, 312.00) | Avg Speed: 6.48
+
+Frame 442
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (240.00, 358.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (714.00, 315.00) | Avg Speed: 6.50
+
+Frame 444
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 358.00) | Avg Speed: 1.12
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (720.00, 318.00) | Avg Speed: 6.38
+
+Frame 446
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 358.00) | Avg Speed: 1.22
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (727.00, 322.00) | Avg Speed: 6.38
+
+Frame 448
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (244.00, 358.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (734.00, 325.00) | Avg Speed: 6.38
+
+Frame 450
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (245.00, 358.00) | Avg Speed: 1.20
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (741.00, 328.00) | Avg Speed: 6.38
+
+Frame 452
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 355.00) | Avg Speed: 0.71
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (748.00, 331.00) | Avg Speed: 6.38
+
+Frame 454
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (239.00, 354.00) | Avg Speed: 0.32
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (755.00, 334.00) | Avg Speed: 6.38
+Group 2 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (290.00, 145.00) | Avg Speed: 0.00
+
+Frame 456
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (242.00, 354.00) | Avg Speed: 0.51
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (762.00, 338.00) | Avg Speed: 6.40
+Group 2 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (297.00, 145.00) | Avg Speed: 3.50
+
+Frame 458
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 355.00) | Avg Speed: 0.32
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (769.00, 341.00) | Avg Speed: 6.38
+Group 2 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (305.00, 146.00) | Avg Speed: 5.01
+
+Frame 460
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 355.00) | Avg Speed: 0.45
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (776.00, 344.00) | Avg Speed: 6.38
+Group 2 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (311.00, 146.00) | Avg Speed: 5.26
+
+Frame 462
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 355.00) | Avg Speed: 0.30
+Group 1 | Type: SINGLE PERSON | Members: ['13'] | Size: 1 | Center: (783.00, 347.00) | Avg Speed: 6.48
+Group 2 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (318.00, 145.00) | Avg Speed: 5.60
+
+Frame 464
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (238.00, 355.00) | Avg Speed: 0.54
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (324.00, 144.00) | Avg Speed: 5.67
+
+Frame 466
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (237.00, 355.00) | Avg Speed: 0.71
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (330.00, 142.00) | Avg Speed: 5.73
+
+Frame 468
+People tracked: 2
+Groups detected: 2
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (235.00, 355.00) | Avg Speed: 1.00
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (336.00, 142.00) | Avg Speed: 5.76
+
+Frame 470
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (236.00, 355.00) | Avg Speed: 0.60
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (342.00, 142.00) | Avg Speed: 5.79
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (59.00, 178.00) | Avg Speed: 0.00
+
+Frame 472
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (241.00, 355.00) | Avg Speed: 0.22
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (346.00, 139.00) | Avg Speed: 5.62
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (58.00, 178.00) | Avg Speed: 0.71
+
+Frame 474
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (243.00, 355.00) | Avg Speed: 0.10
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (350.00, 139.00) | Avg Speed: 5.32
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (65.00, 178.00) | Avg Speed: 2.00
+
+Frame 476
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (245.00, 355.00) | Avg Speed: 0.81
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (353.00, 139.00) | Avg Speed: 4.84
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (62.00, 178.00) | Avg Speed: 0.79
+
+Frame 478
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (245.00, 355.00) | Avg Speed: 0.90
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (356.00, 138.00) | Avg Speed: 4.54
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (65.00, 178.00) | Avg Speed: 1.22
+
+Frame 480
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (250.00, 356.00) | Avg Speed: 0.91
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (358.00, 138.00) | Avg Speed: 4.04
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (77.00, 178.00) | Avg Speed: 3.11
+
+Frame 482
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (254.00, 356.00) | Avg Speed: 1.60
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (359.00, 136.00) | Avg Speed: 3.55
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (81.00, 178.00) | Avg Speed: 3.40
+
+Frame 484
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (260.00, 357.00) | Avg Speed: 2.30
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (363.00, 135.00) | Avg Speed: 3.34
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (96.00, 179.00) | Avg Speed: 4.73
+
+Frame 486
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (267.00, 357.00) | Avg Speed: 3.20
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (362.00, 134.00) | Avg Speed: 2.69
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (102.00, 181.00) | Avg Speed: 4.81
+
+Frame 488
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (273.00, 356.00) | Avg Speed: 3.71
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (362.00, 133.00) | Avg Speed: 2.15
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (99.00, 181.00) | Avg Speed: 4.03
+
+Frame 490
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (275.00, 356.00) | Avg Speed: 3.42
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (361.00, 130.00) | Avg Speed: 1.70
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (102.00, 182.00) | Avg Speed: 4.44
+
+Frame 492
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (272.00, 356.00) | Avg Speed: 2.96
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (361.00, 130.00) | Avg Speed: 1.49
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (102.00, 183.00) | Avg Speed: 3.71
+
+Frame 494
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (271.00, 356.00) | Avg Speed: 2.69
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (362.00, 129.00) | Avg Speed: 1.35
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (106.00, 185.00) | Avg Speed: 4.42
+
+Frame 496
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (264.00, 355.00) | Avg Speed: 2.06
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (364.00, 128.00) | Avg Speed: 1.36
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (107.00, 185.00) | Avg Speed: 4.20
+
+Frame 498
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (260.00, 355.00) | Avg Speed: 1.41
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (364.00, 124.00) | Avg Speed: 1.34
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (110.00, 185.00) | Avg Speed: 3.30
+
+Frame 500
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (256.00, 355.00) | Avg Speed: 0.92
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (366.00, 123.00) | Avg Speed: 1.39
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (113.00, 186.00) | Avg Speed: 3.24
+
+Frame 502
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (253.00, 355.00) | Avg Speed: 0.92
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (368.00, 122.00) | Avg Speed: 1.30
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (116.00, 186.00) | Avg Speed: 2.04
+
+Frame 504
+People tracked: 3
+Groups detected: 3
+Group 0 | Type: SINGLE PERSON | Members: ['2'] | Size: 1 | Center: (249.00, 355.00) | Avg Speed: 1.84
+Group 1 | Type: SINGLE PERSON | Members: ['16'] | Size: 1 | Center: (366.00, 122.00) | Avg Speed: 0.89
+Group 2 | Type: SINGLE PERSON | Members: ['18'] | Size: 1 | Center: (122.00, 186.00) | Avg Speed: 2.09
+
+
+Final Summary
+-------------
+Frames Tracked: 252
+Total tracked IDs: 8
+
+Group type counts:
+SINGLE PERSON: 482 groups
+SMALL GROUP: 29 groups

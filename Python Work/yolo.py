@@ -487,11 +487,11 @@ def main(video_output_pairs):
 
 if __name__ == "__main__":
     video_output_pairs = [
-        ("people-in-park.mp4", "people_in_park_results.txt"),
+        ("people-in-park.mp4", "people-in-park-results.txt"),
         ("people-walking.mp4", "people-walking.txt"),
-        ("wold.mp4", "wold_results.txt"),
-        ("pier-walking.mp4","pier_walking_results.txt"),
-        ("walk-in-park.mp4","walk_in_park_results.txt")
+        ("wold.mp4", "wold-results.txt"),
+        ("pier-walking.mp4","pier-walking-results.txt"),
+        ("walk-in-park.mp4","walk-in-park-results.txt")
     ]
 
     main(video_output_pairs)

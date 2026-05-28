@@ -1,0 +1,26 @@
+G_Num | Start | End | Location
+
+G1 | 0:00 | 0:34 | Back-Across
+
+G2 | 0:00 | 0:45 | Back-Right
+
+G4 | 0:02 | 0:07 | Left-Right
+
+G5 | 0:04 | 0:07 | Right-Left
+
+G6 | 0:06 | 0:12 | Left-Right
+
+G7 | 0:08 | 0:12 | Right-Left
+
+G8 | 0:18 | 0:29 | Right-Left
+
+G9 | 0:19 | 0:24 | Left-Right
+
+G10 | 0:19 | 0:24 | Left-Right
+
+G11 | 0:21 | 0:27 | Left-Right
+
+G12 | 0:22 | 0:33 | Left-Right
+
+G13s | 0:29 | 0:38 | Left-Right
+
