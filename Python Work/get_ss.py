@@ -1,15 +1,28 @@
 """
 @Author : Evan Cillie
-@LastEdit : 05-17-26
-@Purpose : CSC 488 Capstone 
+@Purpose : View YOLO + DeepSORT tracking video from a specific frame
+
+Controls:
+q = quit
+s = save current frame as an image
+p = pause / unpause
 """
 
 from ultralytics import YOLO
 from deep_sort_realtime.deepsort_tracker import DeepSort
 import cv2
 import math
-from collections import defaultdict, deque, Counter
+from collections import defaultdict, deque
 
+
+# ----------------------------
+# Change these settings
+# ----------------------------
+VIDEO_PATH = "people-in-park.mp4"
+START_FRAME = 250
+
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 360
 
 PERSON_CLASS_ID = 0
 CONFIDENCE_THRESHOLD = 0.5
@@ -19,15 +32,10 @@ CROWD_SIZE_THRESHOLD = 4
 LINE_ALIGNMENT_THRESHOLD = 60
 PASSERBY_SPEED_THRESHOLD = 12
 
-PROCESS_EVERY_FRAMES = 2
 TRACK_HISTORY_LENGTH = 10
-
-FRAME_WIDTH = 640
-FRAME_HEIGHT = 360
 
 
 def calculate_distance(p1, p2):
-    """Calculate the distance between two points."""
     x1, y1 = p1
     x2, y2 = p2
 
@@ -35,7 +43,6 @@ def calculate_distance(p1, p2):
 
 
 def calculate_speed(history):
-    """Calculate average pixel speed for one tracked person."""
     if len(history) < 2:
         return 0
 
@@ -48,12 +55,10 @@ def calculate_speed(history):
 
 
 def get_person_position(person):
-    """Get the position used for grouping a person."""
     return person["center_x"], person["ground_y"]
 
 
 def cluster_people_in_frame(people):
-    """Group people in the same frame based on distance."""
     groups = []
     used_indices = set()
 
@@ -97,7 +102,6 @@ def cluster_people_in_frame(people):
 
 
 def detect_group_line(group):
-    """Check if a group forms a rough line."""
     if len(group) < 3:
         return False
 
@@ -118,7 +122,6 @@ def detect_group_line(group):
 
 
 def calculate_group_center(group):
-    """Calculate the average center of a group."""
     total_x = 0
     total_y = 0
 
@@ -129,11 +132,10 @@ def calculate_group_center(group):
     center_x = total_x / len(group)
     center_y = total_y / len(group)
 
-    return center_x, center_y
+    return int(center_x), int(center_y)
 
 
 def calculate_group_average_speed(group):
-    """Calculate the average speed of a group."""
     if len(group) == 0:
         return 0
 
@@ -145,64 +147,27 @@ def calculate_group_average_speed(group):
     return total_speed / len(group)
 
 
-def get_group_member_ids(group):
-    """Get the DeepSORT IDs for people in a group."""
-    member_ids = []
-
-    for person in group:
-        member_ids.append(person["track_id"])
-
-    return sorted(member_ids)
-
-
 def classify_group(group):
-    """Classify one group in the frame."""
     group_size = len(group)
     average_speed = calculate_group_average_speed(group)
     is_line = detect_group_line(group)
 
     if group_size == 1:
         if average_speed >= PASSERBY_SPEED_THRESHOLD:
-            return "Passerby"
+            return "PASSERBY"
 
-        return "Single Person"
+        return "SINGLE PERSON"
 
     if is_line:
-        return "Line"
+        return "LINE"
 
     if group_size >= CROWD_SIZE_THRESHOLD:
-        return "Crowd"
+        return "CROWD"
 
-    return "Small Group"
-
-
-def build_group_summaries(groups):
-    """Create summary data for each group in one frame."""
-    group_summaries = []
-
-    for group_id, group in enumerate(groups):
-        group_type = classify_group(group)
-        member_ids = get_group_member_ids(group)
-        center_x, center_y = calculate_group_center(group)
-        average_speed = calculate_group_average_speed(group)
-
-        group_summary = {
-            "group_id": group_id,
-            "type": group_type,
-            "members": member_ids,
-            "size": len(group),
-            "center_x": center_x,
-            "center_y": center_y,
-            "avg_speed": average_speed
-        }
-
-        group_summaries.append(group_summary)
-
-    return group_summaries
+    return "SMALL GROUP"
 
 
 def get_detections(results):
-    """Get person detections from YOLO results."""
     detections = []
 
     for box in results.boxes:
@@ -220,8 +185,7 @@ def get_detections(results):
     return detections
 
 
-def get_people_from_tracks(tracks, track_history, unique_track_ids):
-    """Convert DeepSORT tracks into person data."""
+def get_people_from_tracks(tracks, track_history):
     people = []
 
     for track in tracks:
@@ -229,8 +193,9 @@ def get_people_from_tracks(tracks, track_history, unique_track_ids):
             continue
 
         track_id = track.track_id
-        unique_track_ids.add(track_id)
+
         x1, y1, x2, y2 = map(int, track.to_ltrb())
+
         center_x = (x1 + x2) // 2
         center_y = (y1 + y2) // 2
         ground_y = y2
@@ -240,6 +205,10 @@ def get_people_from_tracks(tracks, track_history, unique_track_ids):
 
         person_data = {
             "track_id": track_id,
+            "x1": x1,
+            "y1": y1,
+            "x2": x2,
+            "y2": y2,
             "center_x": center_x,
             "center_y": center_y,
             "ground_y": ground_y,
@@ -251,40 +220,69 @@ def get_people_from_tracks(tracks, track_history, unique_track_ids):
     return people
 
 
-def write_frame_results(output_file, frame_number, people, group_summaries):
-    """Write the results for one frame."""
-    output_file.write(f"Frame {frame_number}\n")
-    output_file.write(f"People tracked: {len(people)}\n")
-    output_file.write(f"Groups detected: {len(group_summaries)}\n")
+def draw_people(frame, people):
+    for person in people:
+        x1 = person["x1"]
+        y1 = person["y1"]
+        x2 = person["x2"]
+        y2 = person["y2"]
+        track_id = person["track_id"]
+        speed = person["speed"]
 
-    for group in group_summaries:
-        output_file.write(
-            f"Group {group['group_id']} | "
-            f"Type: {group['type']} | "
-            f"Members: {group['members']} | "
-            f"Size: {group['size']} | "
-            f"Center: ({group['center_x']:.2f}, {group['center_y']:.2f}) | "
-            f"Avg Speed: {group['avg_speed']:.2f}\n"
+        # Bounding box
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
+        # Track ID and speed
+        label = f"ID {track_id} | Speed {speed:.1f}"
+
+        cv2.putText(
+            frame,
+            label,
+            (x1, y1 - 10),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.45,
+            (0, 255, 0),
+            2
         )
 
-    output_file.write("\n")
+        # Center point
+        cv2.circle(frame, (person["center_x"], person["center_y"]), 4, (0, 255, 0), -1)
 
 
-def write_final_summary(output_file, processed_frames, unique_track_ids, group_type_counts):
-    """Write the final summary at the end of the file."""
-    output_file.write("\nFinal Summary\n")
-    output_file.write("-------------\n")
-    output_file.write(f"Frames Tracked: {processed_frames}\n")
-    output_file.write(f"Total tracked IDs: {len(unique_track_ids)}\n\n")
+def draw_groups(frame, groups):
+    for group_id, group in enumerate(groups):
+        group_type = classify_group(group)
+        center_x, center_y = calculate_group_center(group)
+        average_speed = calculate_group_average_speed(group)
 
-    output_file.write("Group type counts:\n")
+        label = f"Group {group_id}: {group_type} | Size {len(group)} | Avg Speed {average_speed:.1f}"
 
-    for group_type, count in group_type_counts.items():
-        output_file.write(f"{group_type}: {count} groups\n")
+        # Group center
+        cv2.circle(frame, (center_x, center_y), 8, (255, 0, 0), -1)
+
+        # Group label
+        cv2.putText(
+            frame,
+            label,
+            (center_x - 80, center_y - 15),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.45,
+            (255, 0, 0),
+            2
+        )
+
+        # Draw lines from group center to members
+        for person in group:
+            cv2.line(
+                frame,
+                (center_x, center_y),
+                (person["center_x"], person["ground_y"]),
+                (255, 0, 0),
+                1
+            )
 
 
-def process_video(video_file_name, output_file_name):
-    """Run YOLO and DeepSORT on one video."""
+def main():
     model = YOLO("yolov8n.pt")
 
     tracker = DeepSort(
@@ -293,58 +291,67 @@ def process_video(video_file_name, output_file_name):
         max_cosine_distance=0.4
     )
 
-    cap = cv2.VideoCapture(video_file_name)
+    cap = cv2.VideoCapture(VIDEO_PATH)
 
     if not cap.isOpened():
-        raise Exception("Could not open video")
+        print("Could not open video.")
+        return
+
+    cap.set(cv2.CAP_PROP_POS_FRAMES, START_FRAME)
 
     track_history = defaultdict(lambda: deque(maxlen=TRACK_HISTORY_LENGTH))
-    group_type_counts = Counter()
-    unique_track_ids = set()
 
-    frame_number = 0
-    processed_frames = 0
+    frame_number = START_FRAME
+    paused = False
+    last_frame = None
 
-    with open(output_file_name, "w") as output_file:
-        output_file.write("Tracking Results\n")
+    print("Controls:")
+    print("q = quit")
+    print("s = save current clean frame")
+    print("p = pause / unpause")
 
-        while True:
+    while True:
+        if not paused:
             ret, frame = cap.read()
+
             if not ret:
+                print("End of video or could not read frame.")
                 break
+
             frame_number += 1
-            if frame_number % PROCESS_EVERY_FRAMES != 0:
-                continue
-            processed_frames += 1
+
             frame = cv2.resize(frame, (FRAME_WIDTH, FRAME_HEIGHT))
+
+            # YOLO and DeepSORT still run in the background
             results = model(frame, verbose=False)[0]
             detections = get_detections(results)
-            tracks = tracker.update_tracks(detections, frame=frame)
-            people = get_people_from_tracks(tracks, track_history, unique_track_ids)
-            groups = cluster_people_in_frame(people)
-            group_summaries = build_group_summaries(groups)
-            for group in group_summaries:
-                group_type_counts[group["type"]] += 1
-            write_frame_results(output_file, frame_number, people, group_summaries)
 
-        write_final_summary(output_file,processed_frames,unique_track_ids,group_type_counts)
+            tracks = tracker.update_tracks(detections, frame=frame)
+            people = get_people_from_tracks(tracks, track_history)
+
+            groups = cluster_people_in_frame(people)
+
+            # No boxes, labels, group lines, or frame number are drawn
+            cv2.imshow("Clean Video Feed", frame)
+
+            last_frame = frame.copy()
+
+        key = cv2.waitKey(30) & 0xFF
+
+        if key == ord("q"):
+            break
+
+        elif key == ord("s"):
+            if last_frame is not None:
+                filename = f"clean_frame_{frame_number}.png"
+                cv2.imwrite(filename, last_frame)
+                print(f"Saved {filename}")
+
+        elif key == ord("p"):
+            paused = not paused
 
     cap.release()
-
-
-def main(video_output_pairs):
-    """Process all videos."""
-    for video_file_name, output_file_name in video_output_pairs:
-        process_video(video_file_name, output_file_name)
-
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    video_output_pairs = [
-        ("people-in-park.mp4", "people-in-park-results.txt"),
-        ("people-walking.mp4", "people-walking.txt"),
-        ("wold.mp4", "wold-results.txt"),
-        ("pier-walking.mp4", "pier-walking-results.txt"),
-        ("walk-in-park.mp4", "walk-in-park-results.txt")
-    ]
-
-    main(video_output_pairs)
+    main()
